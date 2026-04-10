@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+
+
+<div class="registration-container">
+  <h2 class="heading">📝👩‍💻 Registration Page 👨‍💻📝</h2>
+
+  <form method="POST" class="registration-form">
+    {% csrf_token %}
+
+    <input type="text" name="first_name" placeholder="👶 First Name" required><br><br>
+    <input type="text" name="last_name" placeholder="👨‍👩‍👧 Last Name" required><br><br>
+    <input type="email" name="email" placeholder="📧 Email Address" required><br><br>
+    <input type="text" name="username" placeholder="👤 Username" required><br><br>
+    <input type="password" name="password" placeholder="🔐 Password" required><br><br>
+
+    <button type="submit">🎯 Register Now</button>
+  </form>
+
+  <p id="tip-message">✅ Tip: Fill out all fields carefully! 💡✨</p>
+</div>
+
+<!-- JS: Fade out tip message after 5 seconds -->
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const msg = document.getElementById('tip-message');
+    if (msg) {
+      setTimeout(() => {
+        msg.style.transition = 'opacity 1s ease';
+        msg.style.opacity = 0;
+      }, 5000);
+    }
+  });
+</script>
+
+{% endblock %}

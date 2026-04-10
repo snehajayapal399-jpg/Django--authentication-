@@ -1,0 +1,16 @@
+
+<nav class="navbar">
+  <div class="logo">
+    🔐 AUTHENTICATION SYSTEM 💻✨
+  </div>
+
+  <div class="nav-links">
+    {% if user.is_authenticated %}
+      <a href="{% url 'profile' %}">🙋‍♀️ Profile</a>
+      <a href="{% url 'signout' %}">🚪 Logout</a>
+    {% else %}
+      <a href="{% url 'signup' %}">📝 Register</a>
+      <a href="{% url 'signin' %}">🔑 Login</a>
+    {% endif %}
+  </div>
+</nav>

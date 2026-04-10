@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🔐 Auth System | Django 💻</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+  <!-- Navbar -->
+  {% include 'nav.html' %}
+
+  <!-- Flash Messages -->
+  <div id="messages" class="message-container">
+    {% for i in messages %}
+      <p class="success-message">✅ {{ i }}</p>
+    {% endfor %}
+  </div>
+
+  <!-- JavaScript: Hide messages after 5 seconds -->
+  <script>
+    setTimeout(function () {
+      const msgBox = document.getElementById('messages');
+      if (msgBox) {
+        msgBox.style.transition = 'opacity 1s ease';
+        msgBox.style.opacity = '0';
+      }
+    }, 5000);
+  </script>
+
+  <!-- Content Block -->
+  <main class="content">
+    <center>
+        {% block content %}
+        {% endblock %}
+    </center>
+  </main>
+
+</body>
+</html>
