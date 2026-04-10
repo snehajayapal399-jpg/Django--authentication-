@@ -1,12 +1,11 @@
 # Virtual Environment
 myenv/
 
-# Python cache files
+# Python cache
 __pycache__/
 *.pyc
-*.pyo
 
-# Django database
+# Database
 db.sqlite3
 
 # Environment variables
@@ -15,7 +14,7 @@ db.sqlite3
 # Logs
 *.log
 
-# VS Code settings (optional)
+# Editor files
 .vscode/
 
 # OS files
